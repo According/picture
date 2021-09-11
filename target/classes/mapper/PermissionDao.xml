@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PermissionDao">
+
+    <select id="selectPermissionByRoleId" resultType="com.example.demo.entity.Permission">
+    SELECT
+	p.*
+    FROM
+	permission p
+	where p.pid in ( SELECT pr.pid FROM role r LEFT JOIN permission_role pr ON r.rid = pr.rid WHERE r.rid = 2 )
+</select>
+</mapper>

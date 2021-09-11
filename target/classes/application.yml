@@ -1,0 +1,26 @@
+spring:
+   messages:
+      encoding: UTF-8
+      basename: i18n/messages
+
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/vueblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123456
+
+server:
+   port: 8088
+shiro-redis:
+   enabled: true
+   redis-manager:
+      host: 127.0.0.1:6379
+
+
+mybatis:
+   mapper-locations: classpath:/mapper/**Mapper.xml
+markerhub:
+   jwt:
+      secret: f4e2e52034348f86b67cde581c0f9eb5
+      expire: 604800
+      header: Authorization
